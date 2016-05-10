@@ -1,0 +1,37 @@
+// ==UserScript==
+// @name         New Userscript
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        www.8591.com.tw/*
+// @grant        none
+// @require      http://code.jquery.com/jquery-2.2.2.min.js
+// ==/UserScript==
+
+(function() {
+
+    var blackKeyword = ['代製','客製','JR','加油','念念','毅的店','憲','序號','年糕','葉虎','二十頻六洞','發傳單'];
+    var blackUser = [832851,992132,1058958,573502,1224176,435078,1065983];
+    $('li').each(function() {
+        var titleName = $(this).find('div').find('a').attr('title');
+        var userID = $(this).find('div').find('div').find('a.im-contact').data('account');
+        if(typeof titleName !== 'undefined')
+        for(var i = 0 ; i < blackKeyword.length ; ++i) {
+            if(-1 != titleName.search(blackKeyword[i])) {
+                console.log("block: " + titleName);
+                $(this).addClass('hide');
+                break;
+            }
+        }
+        
+        if(typeof userID !== 'undefined')
+        for(var j = 0 ; j < blackUser.length ; ++j) {
+            if(userID == blackUser[j]) {
+                console.log("block: " + titleName);
+                $(this).addClass('hide');
+                break;
+            }
+        }
+    });
+})();
