@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         New Userscript
-// @namespace    http://tampermonkey.net/
+// @name         block_8591_link
+// @namespace    http://xnum.tw/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  擋些討厭的賣場用
+// @author       xnum
 // @match        www.8591.com.tw/*
 // @grant        none
 // @require      http://code.jquery.com/jquery-2.2.2.min.js
@@ -15,7 +15,7 @@
     var blackUser = [832851,992132,1058958,573502,1224176,435078,1065983];
     $('li').each(function() {
         var titleName = $(this).find('div').find('a').attr('title');
-        var userID = $(this).find('div').find('div').find('a.im-contact').data('account');
+        var userID = $(this).find('div').find('div').find('a.im-contact').data('fuid');
         if(typeof titleName !== 'undefined')
         for(var i = 0 ; i < blackKeyword.length ; ++i) {
             if(-1 != titleName.search(blackKeyword[i])) {
