@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         block_8591_link
 // @namespace    http://xnum.tw/
-// @version      0.2
+// @version      0.3
 // @description  擋些討厭的賣場用
 // @author       xnum
 // @match        www.8591.com.tw/*
