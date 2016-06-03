@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         block_8591_link
 // @namespace    http://xnum.tw/
-// @version      0.4
+// @version      0.5
 // @description  擋些討厭的賣場用
 // @author       xnum
 // @match        www.8591.com.tw/*
 // @grant        none
 // @require      http://code.jquery.com/jquery-2.2.2.min.js
+// @updateURL    https://raw.githubusercontent.com/xnum/8591_block_script/master/block.script
+// @downloadURL  https://raw.githubusercontent.com/xnum/8591_block_script/master/block.script
 // ==/UserScript==
 
 (function() {
